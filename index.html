@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>سایت یک‌صفحه‌ای</title>
+</head>
+<body>
+  <h1>سایت یک‌صفحه‌ای نمونه</h1>
+  <form id="f">
+    <input type="text" placeholder="نام و نام خانوادگی" required />
+    <input type="tel" placeholder="شماره تماس" required />
+    <button type="submit">ارسال</button>
+  </form>
+
+  <script>
+    document.getElementById('f').addEventListener('submit', function(e){
+      e.preventDefault();
+      const data = { name: this[0].value, phone: this[1].value };
+      fetch('/api/visit-request', {
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify(data)
+      })
+      .then(()=>alert('ارسال شد'))
+      .catch(()=>alert('خطا!'));
+    });
+  </script>
+</body>
+</html>
