@@ -1,33 +1,92 @@
+
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>PEO</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PEO | Request a Consultation</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-  <h1>PEO</h1>
-  <p>ثبت درخواست بازدید و همکاری</p>
+  <h1>Parla Energy Optimization</h1>
+  <p>Industrial HVAC & Energy Optimization Services</p>
 </header>
 
 <section>
-  <h2>درباره ما</h2>
+  <h2>About PEO</h2>
   <p>
-    ما در PEO خدمات تخصصی بازدید و مشاوره ارائه می‌دهیم.
+    PEO provides specialized industrial HVAC consulting,
+    energy optimization and technical assessment services.
   </p>
 </section>
 
 <section>
-  <h2>فرم درخواست بازدید</h2>
-  <form>
-    <input type="text" placeholder="نام و نام خانوادگی" required>
-    <input type="tel" placeholder="شماره تماس" required>
-    <textarea placeholder="توضیحات"></textarea>
-    <button type="submit">ارسال درخواست</button>
+  <h2>Request a Consultation</h2>
+
+  <form id="form">
+    <input type="hidden" name="access_key" value="56d0c83b-de91-44fe-95b3-4ae5a465897b">
+    <input type="hidden" name="subject" value="New PEO Service Request">
+
+    <input type="text" name="name" placeholder="Full Name" required>
+    <input type="text" name="company" placeholder="Company Name">
+    <input type="email" name="email" placeholder="Email Address" required>
+    <input type="tel" name="phone" placeholder="Phone / WhatsApp" required>
+
+    <select name="service" required>
+      <option value="">Select Required Service</option>
+      <option>HVAC Optimization</option>
+      <option>Chiller Optimization</option>
+      <option>Cooling Tower Optimization</option>
+      <option>Energy Audit</option>
+      <option>Industrial HVAC Consulting</option>
+      <option>Other</option>
+    </select>
+
+    <input type="text" name="location" placeholder="Project Location">
+
+    <textarea name="message" placeholder="Describe your project or requirements" required></textarea>
+
+    <button type="submit">Submit Request</button>
+    <p id="result"></p>
   </form>
 </section>
+
+<script>
+const form = document.getElementById('form');
+const result = document.getElementById('result');
+const submitBtn = form.querySelector('button[type="submit"]');
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const originalText = submitBtn.textContent;
+  submitBtn.textContent = 'Sending...';
+  submitBtn.disabled = true;
+
+  try {
+    const response = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: new FormData(form)
+    });
+
+    const data = await response.json();
+
+    if (response.ok && data.success) {
+      result.textContent = 'Your request has been sent successfully.';
+      form.reset();
+    } else {
+      result.textContent = data.message || 'Submission failed. Please try again.';
+    }
+  } catch (error) {
+    result.textContent = 'Connection error. Please try again.';
+  } finally {
+    submitBtn.textContent = originalText;
+    submitBtn.disabled = false;
+  }
+});
+</script>
 
 </body>
 </html>
