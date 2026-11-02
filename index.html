@@ -1,57 +1,338 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PEO | Request a Consultation</title>
+
+  <title>پارسلا انرژی اپتیمایزیشن | PEO</title>
+  <meta name="description" content="خدمات مشاوره مهندسی، بهینه‌سازی انرژی و سیستم‌های تهویه مطبوع صنعتی">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-  <h1>Parla Energy Optimization</h1>
-  <p>Industrial HVAC & Energy Optimization Services</p>
+<header class="site-header">
+  <div class="container nav-container">
+    <a href="#" class="logo">
+      <span class="logo-mark">PEO</span>
+      <span class="logo-name">Parla Energy Optimization</span>
+    </a>
+
+    <nav>
+      <a href="#home">صفحه اصلی</a>
+      <a href="#about">درباره ما</a>
+      <a href="#services">خدمات</a>
+      <a href="#process">روش همکاری</a>
+      <a href="#contact" class="nav-button">درخواست مشاوره</a>
+    </nav>
+  </div>
 </header>
 
-<section>
-  <h2>About PEO</h2>
-  <p>
-    PEO provides specialized industrial HVAC consulting,
-    energy optimization and technical assessment services.
-  </p>
+<main>
+
+<section class="hero" id="home">
+  <div class="container hero-content">
+    <div class="hero-text">
+      <span class="eyebrow">مهندسی هوشمند، مصرف بهینه</span>
+
+      <h1>
+        راهکارهای مهندسی برای
+        <span>بهینه‌سازی انرژی</span>
+        در صنعت
+      </h1>
+
+      <p>
+        ارائه خدمات مشاوره فنی، ارزیابی و بهینه‌سازی سیستم‌های
+        HVAC و تأسیسات صنعتی با رویکرد افزایش راندمان و کاهش مصرف انرژی.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#contact" class="primary-button">درخواست مشاوره</a>
+        <a href="#services" class="secondary-button">مشاهده خدمات</a>
+      </div>
+
+      <div class="hero-note">
+        <span></span>
+        راهکارهای تخصصی برای عملکرد بهتر تجهیزات و تأسیسات
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="visual-frame">
+        <div class="visual-label">ENGINEERING SOLUTIONS</div>
+        <div class="visual-content">
+          <div class="visual-icon">PEO</div>
+          <span>ENERGY</span>
+          <strong>OPTIMIZATION</strong>
+          <div class="visual-line"></div>
+          <small>HVAC • INDUSTRIAL SYSTEMS • EFFICIENCY</small>
+        </div>
+      </div>
+      <div class="floating-card">
+        <span class="floating-dot"></span>
+        <div>
+          <strong>Engineering Focus</strong>
+          <small>Performance & Efficiency</small>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section>
-  <h2>Request a Consultation</h2>
+<section class="intro section-space" id="about">
+  <div class="container intro-grid">
+    <div>
+      <span class="section-tag">ABOUT PEO</span>
+      <h2>مهندسی در خدمت <span>بهره‌وری بیشتر</span></h2>
+    </div>
 
-  <form id="form">
-    <input type="hidden" name="access_key" value="56d0c83b-de91-44fe-95b3-4ae5a465897b">
-    <input type="hidden" name="subject" value="New PEO Service Request">
-
-    <input type="text" name="name" placeholder="Full Name" required>
-    <input type="text" name="company" placeholder="Company Name">
-    <input type="email" name="email" placeholder="Email Address" required>
-    <input type="tel" name="phone" placeholder="Phone / WhatsApp" required>
-
-    <select name="service" required>
-      <option value="">Select Required Service</option>
-      <option>HVAC Optimization</option>
-      <option>Chiller Optimization</option>
-      <option>Cooling Tower Optimization</option>
-      <option>Energy Audit</option>
-      <option>Industrial HVAC Consulting</option>
-      <option>Other</option>
-    </select>
-
-    <input type="text" name="location" placeholder="Project Location">
-
-    <textarea name="message" placeholder="Describe your project or requirements" required></textarea>
-
-    <button type="submit">Submit Request</button>
-    <p id="result"></p>
-  </form>
+    <div class="intro-description">
+      <p>
+        Parla Energy Optimization یک مجموعه مهندسی با تمرکز بر
+        مشاوره فنی، سیستم‌های تهویه مطبوع صنعتی و بهینه‌سازی مصرف انرژی است.
+      </p>
+      <p>
+        رویکرد ما، بررسی دقیق شرایط فنی پروژه و ارائه راهکارهای
+        متناسب با نیاز واقعی هر مجموعه صنعتی است.
+      </p>
+    </div>
+  </div>
 </section>
+
+<section class="services section-space" id="services">
+  <div class="container">
+    <div class="section-heading">
+      <span class="section-tag">OUR SERVICES</span>
+      <h2>خدمات تخصصی ما</h2>
+      <p>راهکارهای مهندسی متناسب با نیاز سیستم‌ها و تأسیسات صنعتی</p>
+    </div>
+
+    <div class="service-grid">
+
+      <article class="service-card">
+        <div class="service-number">01</div>
+        <div class="service-icon">HVAC</div>
+        <h3>بهینه‌سازی سیستم‌های HVAC</h3>
+        <p>
+          ارزیابی عملکرد سیستم‌های تهویه مطبوع و بررسی فرصت‌های
+          بهبود راندمان و کاهش مصرف انرژی.
+        </p>
+        <a href="#contact">درخواست مشاوره ←</a>
+      </article>
+
+      <article class="service-card">
+        <div class="service-number">02</div>
+        <div class="service-icon">CH</div>
+        <h3>بهینه‌سازی چیلر</h3>
+        <p>
+          بررسی شرایط عملکرد چیلرها، پارامترهای بهره‌برداری
+          و شناسایی ظرفیت‌های بالقوه بهبود عملکرد.
+        </p>
+        <a href="#contact">درخواست مشاوره ←</a>
+      </article>
+
+      <article class="service-card">
+        <div class="service-number">03</div>
+        <div class="service-icon">EN</div>
+        <h3>ممیزی و تحلیل انرژی</h3>
+        <p>
+          تحلیل مصرف انرژی تجهیزات و تأسیسات و ارائه پیشنهادهای
+          فنی برای ارتقای بهره‌وری.
+        </p>
+        <a href="#contact">درخواست مشاوره ←</a>
+      </article>
+
+      <article class="service-card">
+        <div class="service-number">04</div>
+        <div class="service-icon">ID</div>
+        <h3>مشاوره مهندسی صنعتی</h3>
+        <p>
+          ارائه خدمات بررسی فنی و مهندسی در حوزه تجهیزات،
+          تأسیسات و سیستم‌های صنعتی.
+        </p>
+        <a href="#contact">درخواست مشاوره ←</a>
+      </article>
+
+      <article class="service-card">
+        <div class="service-number">05</div>
+        <div class="service-icon">CT</div>
+        <h3>سیستم‌های برج خنک‌کننده</h3>
+        <p>
+          بررسی فنی عملکرد سیستم‌های برج خنک‌کننده و
+          شناسایی فرصت‌های بهبود مصرف آب و انرژی.
+        </p>
+        <a href="#contact">درخواست مشاوره ←</a>
+      </article>
+
+      <article class="service-card">
+        <div class="service-number">06</div>
+        <div class="service-icon">PI</div>
+        <h3>مهندسی پایپینگ</h3>
+        <p>
+          خدمات فنی و مهندسی در حوزه سیستم‌های پایپینگ،
+          بررسی مدارک و هماهنگی مهندسی پروژه.
+        </p>
+        <a href="#contact">درخواست مشاوره ←</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="advantages section-space">
+  <div class="container advantages-grid">
+    <div>
+      <span class="section-tag">WHY PEO</span>
+      <h2>چرا PEO؟</h2>
+      <p>
+        تمرکز بر تحلیل فنی، شناخت نیاز پروژه و ارائه راهکارهای
+        مهندسی متناسب با شرایط واقعی بهره‌برداری.
+      </p>
+    </div>
+
+    <div class="advantage-list">
+      <div class="advantage-item">
+        <span>01</span>
+        <div>
+          <h3>رویکرد مهندسی و تحلیلی</h3>
+          <p>تصمیم‌گیری بر پایه بررسی فنی و ارزیابی شرایط سیستم.</p>
+        </div>
+      </div>
+
+      <div class="advantage-item">
+        <span>02</span>
+        <div>
+          <h3>راهکار متناسب با پروژه</h3>
+          <p>توجه به نیازها، محدودیت‌ها و شرایط اختصاصی هر مجموعه.</p>
+        </div>
+      </div>
+
+      <div class="advantage-item">
+        <span>03</span>
+        <div>
+          <h3>توجه به بهره‌وری</h3>
+          <p>تمرکز بر کاهش اتلاف منابع و بهبود عملکرد تجهیزات.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="process section-space" id="process">
+  <div class="container">
+    <div class="section-heading">
+      <span class="section-tag">HOW WE WORK</span>
+      <h2>فرآیند همکاری با PEO</h2>
+      <p>از شناخت نیاز پروژه تا ارائه راهکار مهندسی</p>
+    </div>
+
+    <div class="process-grid">
+      <div class="process-item">
+        <span>01</span>
+        <h3>دریافت درخواست</h3>
+        <p>دریافت اطلاعات اولیه و شناخت نیاز کارفرما.</p>
+      </div>
+
+      <div class="process-item">
+        <span>02</span>
+        <h3>بررسی فنی</h3>
+        <p>ارزیابی اولیه شرایط و اطلاعات فنی پروژه.</p>
+      </div>
+
+      <div class="process-item">
+        <span>03</span>
+        <h3>ارائه پیشنهاد</h3>
+        <p>تعریف دامنه خدمات و پیشنهاد راهکار مناسب.</p>
+      </div>
+
+      <div class="process-item">
+        <span>04</span>
+        <h3>همکاری و اجرا</h3>
+        <p>پیشبرد خدمات مهندسی بر اساس توافق پروژه.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact section-space" id="contact">
+  <div class="container contact-grid">
+
+    <div class="contact-info">
+      <span class="section-tag">CONTACT PEO</span>
+      <h2>پروژه خود را با ما مطرح کنید</h2>
+      <p>
+        برای دریافت مشاوره فنی و بررسی نیازهای پروژه،
+        اطلاعات خود را در فرم مقابل ثبت کنید.
+        کارشناسان ما درخواست شما را بررسی خواهند کرد.
+      </p>
+
+      <div class="contact-highlight">
+        <span>PEO</span>
+        <div>
+          <strong>Parla Energy Optimization</strong>
+          <small>Industrial HVAC & Energy Optimization</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-card">
+      <h3>فرم درخواست مشاوره</h3>
+      <p>لطفاً اطلاعات پروژه را وارد کنید.</p>
+
+      <form id="form">
+        <input type="hidden" name="access_key" value="56d0c83b-de91-44fe-95b3-4ae5a465897b">
+        <input type="hidden" name="subject" value="New PEO Service Request">
+
+        <label>نام و نام خانوادگی</label>
+        <input type="text" name="name" placeholder="نام شما" required>
+
+        <label>نام شرکت</label>
+        <input type="text" name="company" placeholder="نام شرکت یا مجموعه">
+
+        <label>ایمیل</label>
+        <input type="email" name="email" placeholder="example@email.com" required>
+
+        <label>شماره تماس / واتساپ</label>
+        <input type="tel" name="phone" placeholder="شماره تماس" required>
+
+        <label>خدمت مورد نیاز</label>
+        <select name="service" required>
+          <option value="">انتخاب خدمت مورد نیاز</option>
+          <option>بهینه‌سازی سیستم‌های HVAC</option>
+          <option>بهینه‌سازی چیلر</option>
+          <option>بهینه‌سازی برج خنک‌کننده</option>
+          <option>ممیزی انرژی</option>
+          <option>مشاوره مهندسی صنعتی</option>
+          <option>مهندسی پایپینگ</option>
+          <option>سایر خدمات</option>
+        </select>
+
+        <label>موقعیت پروژه</label>
+        <input type="text" name="location" placeholder="شهر / کشور">
+
+        <label>توضیحات پروژه</label>
+        <textarea name="message" placeholder="نیاز یا شرح مختصر پروژه خود را بنویسید..." required></textarea>
+
+        <button type="submit">ارسال درخواست مشاوره</button>
+        <p id="result" aria-live="polite"></p>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-content">
+    <div>
+      <strong>Parla Energy Optimization</strong>
+      <p>راهکارهای مهندسی برای بهره‌وری بیشتر</p>
+    </div>
+    <span>© 2026 PEO. تمامی حقوق محفوظ است.</span>
+  </div>
+</footer>
 
 <script>
 const form = document.getElementById('form');
@@ -62,7 +343,7 @@ form.addEventListener('submit', async (e) => {
   e.preventDefault();
 
   const originalText = submitBtn.textContent;
-  submitBtn.textContent = 'Sending...';
+  submitBtn.textContent = 'در حال ارسال...';
   submitBtn.disabled = true;
 
   try {
@@ -74,13 +355,16 @@ form.addEventListener('submit', async (e) => {
     const data = await response.json();
 
     if (response.ok && data.success) {
-      result.textContent = 'Your request has been sent successfully.';
+      result.textContent = 'درخواست شما با موفقیت ارسال شد.';
+      result.className = 'success';
       form.reset();
     } else {
-      result.textContent = data.message || 'Submission failed. Please try again.';
+      result.textContent = data.message || 'ارسال درخواست ناموفق بود. لطفاً دوباره تلاش کنید.';
+      result.className = 'error';
     }
   } catch (error) {
-    result.textContent = 'Connection error. Please try again.';
+    result.textContent = 'خطا در اتصال. لطفاً دوباره تلاش کنید.';
+    result.className = 'error';
   } finally {
     submitBtn.textContent = originalText;
     submitBtn.disabled = false;
