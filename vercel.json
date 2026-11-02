@@ -1,4 +1,3 @@
-
 {
   "version": 2,
   "builds": [
@@ -8,6 +7,10 @@
     },
     {
       "src": "style.css",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "peo-logo.png.png",
       "use": "@vercel/static"
     },
     {
