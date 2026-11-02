@@ -1021,3 +1021,25 @@ button:disabled {
     padding: 10px;
   }
 }
+/* CONTACT INFORMATION SECTION */
+
+.contact-info-section {
+  background: linear-gradient(135deg, #EDF3F2, #E0F1EF);
+  position: relative;
+}
+
+.contact-info-section .service-grid {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.contact-info-section .service-card {
+  border: 1px solid #DCE7E5;
+  background: #FFFFFF;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-info-section .service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(18, 61, 80, 0.13);
+}
