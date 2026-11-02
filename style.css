@@ -984,3 +984,17 @@ button:disabled {
     height: 55px;
   }
 }
+/* PEO Logo Position */
+.logo {
+  margin-right: 0;
+  margin-left: auto;
+  justify-content: flex-start;
+}
+
+.logo-image {
+  object-position: right center;
+}
+
+.nav-container {
+  direction: rtl;
+}
