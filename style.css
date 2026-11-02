@@ -933,3 +933,20 @@ button:disabled {
     align-items: flex-start;
   }
 }
+.logo-image {
+  height: 65px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .logo-image {
+    height: 48px;
+  }
+}
