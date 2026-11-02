@@ -860,3 +860,241 @@ button:disabled {
     align-items: flex-start;
   }
 }
+
+/* =================================
+   PEO - INDUSTRIAL PREMIUM DESIGN
+================================= */
+
+:root {
+  --primary: #078B91;
+  --primary-dark: #076B78;
+  --secondary: #164E63;
+  --green: #35C69A;
+  --background: #EDF4F3;
+}
+
+/* General background */
+
+body {
+  background: #EDF3F2;
+  color: #263B42;
+}
+
+/* Header */
+
+.site-header {
+  background: rgba(249, 253, 252, 0.96);
+  box-shadow: 0 4px 20px rgba(22, 78, 99, 0.06);
+  border-bottom: 1px solid #D8E7E5;
+}
+
+/* Hero */
+
+.hero {
+  background:
+    radial-gradient(circle at 15% 15%, rgba(53,198,154,0.18), transparent 32%),
+    radial-gradient(circle at 90% 90%, rgba(8,139,145,0.12), transparent 35%),
+    linear-gradient(120deg, #E2F0EF 0%, #F2F7F6 55%, #DCECEA 100%);
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  border: 1px solid rgba(8,139,145,0.10);
+  border-radius: 50%;
+  left: -130px;
+  bottom: -180px;
+  pointer-events: none;
+}
+
+.hero h1 span {
+  background: linear-gradient(90deg, #078B91, #20B486);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.eyebrow {
+  background: #D5F1E9;
+  color: #087C77;
+  border: 1px solid #BCE7D9;
+}
+
+/* Hero visual */
+
+.visual-frame {
+  background:
+    radial-gradient(circle at 80% 20%, rgba(53,198,154,0.35), transparent 35%),
+    linear-gradient(145deg, #123F55, #087F8C 65%, #13A58D);
+  box-shadow: 0 25px 60px rgba(10, 93, 103, 0.25);
+}
+
+.visual-icon {
+  border-color: rgba(180,255,228,0.8);
+  box-shadow: 0 0 35px rgba(53,198,154,0.25);
+}
+
+.visual-line {
+  background: #55E0AE;
+  box-shadow: 0 0 12px rgba(85,224,174,0.5);
+}
+
+/* About */
+
+.intro {
+  background: #F8FBFA;
+  position: relative;
+}
+
+.intro h2 span {
+  color: #078B91;
+}
+
+/* Services */
+
+.services {
+  background:
+    radial-gradient(circle at 100% 0%, rgba(8,139,145,0.08), transparent 30%),
+    #EAF2F1;
+}
+
+.service-card {
+  background: linear-gradient(145deg, #FFFFFF, #F5FAF9);
+  border: 1px solid #D9E8E5;
+  box-shadow: 0 7px 22px rgba(22,78,99,0.045);
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 4px;
+  height: 0;
+  background: linear-gradient(#20B486, #087F8C);
+  transition: 0.3s;
+}
+
+.service-card:hover::before {
+  height: 100%;
+}
+
+.service-card:hover {
+  background: #FFFFFF;
+  border-color: #A5D8D0;
+  box-shadow: 0 18px 35px rgba(22,78,99,0.12);
+}
+
+.service-icon {
+  background: linear-gradient(145deg, #D9F4EB, #DCEFF0);
+  color: #087F8C;
+}
+
+.service-number {
+  color: #C9E3DD;
+}
+
+/* Advantages */
+
+.advantages {
+  background:
+    linear-gradient(110deg, #F7FBFA, #E5F1EF);
+}
+
+.advantage-item > span {
+  background: #D9F4E9;
+  color: #087F73;
+  min-width: 43px;
+  height: 43px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+}
+
+/* Process */
+
+.process {
+  background:
+    radial-gradient(circle at 0% 100%, rgba(53,198,154,0.12), transparent 35%),
+    #E3EFED;
+}
+
+.process-item {
+  border: 1px solid #D2E4E0;
+  box-shadow: 0 8px 22px rgba(22,78,99,0.05);
+  transition: 0.25s;
+}
+
+.process-item:hover {
+  transform: translateY(-5px);
+  border-color: #8DCFC0;
+  box-shadow: 0 15px 28px rgba(22,78,99,0.10);
+}
+
+.process-item > span {
+  color: #0A9C89;
+}
+
+/* Contact */
+
+.contact {
+  background:
+    radial-gradient(circle at 90% 10%, rgba(53,198,154,0.10), transparent 30%),
+    #EDF4F3;
+}
+
+.form-card {
+  border: 1px solid #D6E6E2;
+  box-shadow: 0 18px 45px rgba(22,78,99,0.09);
+}
+
+input,
+select,
+textarea {
+  background: #F5F9F8;
+  border-color: #D7E5E2;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  background: #FFFFFF;
+  border-color: #078B91;
+  box-shadow: 0 0 0 4px rgba(8,139,145,0.10);
+}
+
+/* Buttons */
+
+.primary-button,
+button,
+nav .nav-button {
+  background: linear-gradient(115deg, #087F8C, #0A9D8A);
+  box-shadow: 0 7px 18px rgba(8,127,140,0.16);
+}
+
+.primary-button:hover,
+button:hover,
+nav .nav-button:hover {
+  background: linear-gradient(115deg, #076B78, #078B91);
+}
+
+/* Footer */
+
+.site-footer {
+  background: linear-gradient(110deg, #123F55, #075E69);
+  border-top: 4px solid #20B486;
+}
+
+/* Smooth visual transitions */
+
+.service-card,
+.process-item,
+.primary-button,
+.secondary-button,
+button {
+  transition: all 0.25s ease;
+}
