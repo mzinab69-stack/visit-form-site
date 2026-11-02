@@ -14,6 +14,10 @@
       "use": "@vercel/static"
     },
     {
+      "src": "sitemap.xml",
+      "use": "@vercel/static"
+    },
+    {
       "src": "api/visit-request.js",
       "use": "@vercel/node"
     }
