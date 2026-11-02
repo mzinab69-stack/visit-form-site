@@ -18,6 +18,10 @@
       "use": "@vercel/static"
     },
     {
+      "src": "robots.txt",
+      "use": "@vercel/static"
+    },
+    {
       "src": "api/visit-request.js",
       "use": "@vercel/node"
     }
