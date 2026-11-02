@@ -48,7 +48,9 @@ a {
   padding: 95px 0;
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 
 .site-header {
   position: sticky;
@@ -60,18 +62,30 @@ a {
 }
 
 .nav-container {
-  min-height: 84px;
+  min-height: 88px;
   display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
   gap: 25px;
+  direction: rtl;
 }
 
 .logo {
   display: flex;
   align-items: center;
-  gap: 12px;
+  justify-content: flex-start;
+  flex: 0 0 auto;
   direction: ltr;
+}
+
+.logo-image {
+  display: block;
+  width: 220px;
+  height: 76px;
+  object-fit: contain;
+  object-position: right center;
 }
 
 .logo-mark {
@@ -91,36 +105,42 @@ a {
   color: var(--navy);
 }
 
-nav {
+.site-header nav {
   display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   align-items: center;
-  gap: 25px;
+  justify-content: flex-start;
+  gap: 23px;
+  white-space: nowrap;
 }
 
-nav a {
+.site-header nav a {
   font-size: 13px;
   font-weight: 600;
   color: var(--text);
   transition: .25s;
 }
 
-nav a:hover {
+.site-header nav a:hover {
   color: var(--teal);
 }
 
-nav .nav-button {
+.site-header nav .nav-button {
   background: var(--navy);
   color: white;
   padding: 10px 19px;
   border-radius: 7px;
 }
 
-nav .nav-button:hover {
+.site-header nav .nav-button:hover {
   background: var(--teal);
   color: white;
 }
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
 
 .hero {
   position: relative;
@@ -239,7 +259,9 @@ nav .nav-button:hover {
   box-shadow: 0 0 0 5px rgba(40,184,138,.13);
 }
 
-/* HERO GRAPHIC */
+/* =========================
+   HERO GRAPHIC
+========================= */
 
 .hero-visual {
   position: relative;
@@ -376,7 +398,9 @@ nav .nav-button:hover {
   direction: ltr;
 }
 
-/* ABOUT */
+/* =========================
+   ABOUT
+========================= */
 
 .intro {
   background: #F8FBFA;
@@ -417,7 +441,9 @@ nav .nav-button:hover {
   margin-bottom: 13px;
 }
 
-/* SERVICES */
+/* =========================
+   SERVICES
+========================= */
 
 .services {
   background:
@@ -519,7 +545,9 @@ nav .nav-button:hover {
   margin-top: 17px;
 }
 
-/* ADVANTAGES */
+/* =========================
+   ADVANTAGES
+========================= */
 
 .advantages {
   background: linear-gradient(110deg, #F7FAF9, #E2EFEC);
@@ -574,7 +602,9 @@ nav .nav-button:hover {
   margin-top: 5px;
 }
 
-/* PROCESS */
+/* =========================
+   PROCESS
+========================= */
 
 .process {
   background:
@@ -620,7 +650,9 @@ nav .nav-button:hover {
   line-height: 2.1;
 }
 
-/* CONTACT */
+/* =========================
+   CONTACT
+========================= */
 
 .contact {
   background:
@@ -778,7 +810,9 @@ button:disabled {
   color: #C0392B;
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 
 .site-footer {
   background: linear-gradient(110deg, #123D50, #0B5964);
@@ -805,41 +839,31 @@ button:disabled {
   font-size: 11px;
 }
 
-/* RESPONSIVE */
+/* =========================
+   TABLET
+========================= */
 
 @media (max-width: 900px) {
-   .nav-container {
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    padding: 10px 0;
-    gap: 15px;
-  }
 
-  .logo {
-    flex-shrink: 0;
-    margin-right: 0;
+  .nav-container {
+    gap: 12px;
   }
 
   .logo-image {
-    width: 190px;
-    height: 70px;
-    object-fit: contain;
+    width: 175px;
+    height: 68px;
   }
 
   .site-header nav {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 13px;
-    white-space: nowrap;
+    gap: 12px;
   }
 
   .site-header nav a {
-    white-space: nowrap;
-    font-size: 12px;
+    font-size: 11px;
+  }
+
+  .site-header nav .nav-button {
+    padding: 8px 12px;
   }
 
   .hero-content {
@@ -873,7 +897,12 @@ button:disabled {
   }
 }
 
+/* =========================
+   MOBILE
+========================= */
+
 @media (max-width: 600px) {
+
   .container {
     width: calc(100% - 30px);
   }
@@ -882,27 +911,31 @@ button:disabled {
     padding: 65px 0;
   }
 
-    .nav-container {
+  .nav-container {
+    min-height: auto;
     flex-direction: column;
-    gap: 12px;
+    gap: 8px;
+    padding: 8px 0 13px;
   }
 
   .logo-image {
-    width: 145px;
+    width: 155px;
     height: 55px;
   }
 
-  nav {
+  .site-header nav {
+    width: 100%;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px 14px;
+    gap: 8px 13px;
+    white-space: normal;
   }
 
-  nav a {
+  .site-header nav a {
     font-size: 11px;
   }
 
-  nav .nav-button {
+  .site-header nav .nav-button {
     padding: 7px 12px;
   }
 
@@ -958,5 +991,33 @@ button:disabled {
   .footer-content {
     flex-direction: column;
     align-items: flex-start;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 380px) {
+
+  .logo-image {
+    width: 135px;
+    height: 50px;
+  }
+
+  .site-header nav {
+    gap: 7px 10px;
+  }
+
+  .site-header nav a {
+    font-size: 10px;
+  }
+
+  .hero h1 {
+    font-size: 29px;
+  }
+
+  .hero-visual {
+    padding: 10px;
   }
 }
