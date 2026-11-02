@@ -808,15 +808,38 @@ button:disabled {
 /* RESPONSIVE */
 
 @media (max-width: 900px) {
-  .nav-container {
-    flex-direction: column;
-    padding: 15px 0;
+   .nav-container {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 10px 0;
+    gap: 15px;
   }
 
-  nav {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 13px 18px;
+  .logo {
+    flex-shrink: 0;
+    margin-right: 0;
+  }
+
+  .logo-image {
+    width: 190px;
+    height: 70px;
+    object-fit: contain;
+  }
+
+  .site-header nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 13px;
+    white-space: nowrap;
+  }
+
+  .site-header nav a {
+    white-space: nowrap;
+    font-size: 12px;
   }
 
   .hero-content {
@@ -859,15 +882,19 @@ button:disabled {
     padding: 65px 0;
   }
 
-  .nav-container {
-    gap: 13px;
+    .nav-container {
+    flex-direction: column;
+    gap: 12px;
   }
 
-  .logo-name {
-    font-size: 10px;
+  .logo-image {
+    width: 145px;
+    height: 55px;
   }
 
   nav {
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 10px 14px;
   }
 
@@ -932,138 +959,4 @@ button:disabled {
     flex-direction: column;
     align-items: flex-start;
   }
-}
-.logo-image {
-  height: 65px;
-  width: auto;
-  object-fit: contain;
-  display: block;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-}
-
-@media (max-width: 768px) {
-  .logo-image {
-    height: 48px;
-  }
-}
-/* PEO Main Logo */
-
-.site-header {
-  position: relative;
-  z-index: 100;
-}
-
-.nav-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  flex-shrink: 0;
-}
-
-.logo-image {
-  display: block;
-  width: 210px;
-  height: 75px;
-  object-fit: contain;
-  object-position: left center;
-}
-
-@media (max-width: 768px) {
-  .logo-image {
-    width: 145px;
-    height: 55px;
-  }
-}
-.site-header .nav-container {
-    display: flex !important;
-    flex-direction: row-reverse !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    direction: rtl !important;
-    width: 100% !important;
-}
-
-.site-header .logo {
-    order: 2 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    flex-shrink: 0 !important;
-}
-
-.site-header .logo-image {
-    display: block !important;
-    width: 210px !important;
-    height: 75px !important;
-    object-fit: contain !important;
-    object-position: right center !important;
-}
-
-.site-header nav {
-    order: 1 !important;
-    margin-left: auto !important;
-    margin-right: 0 !important;
-}
-
-@media (max-width: 768px) {
-    .site-header .logo-image {
-        width: 145px !important;
-        height: 55px !important;
-    }
-}
-/* Fix PEO Header Layout */
-
-.site-header .nav-container {
-    display: flex !important;
-    flex-direction: row !important;
-    direction: rtl !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    flex-wrap: nowrap !important;
-    gap: 20px !important;
-}
-
-.site-header .logo {
-    flex: 0 0 auto !important;
-    margin: 0 !important;
-    order: 1 !important;
-}
-
-.site-header .logo-image {
-    width: 210px !important;
-    height: 75px !important;
-    object-fit: contain !important;
-}
-
-.site-header nav {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    align-items: center !important;
-    gap: 18px !important;
-    order: 2 !important;
-    white-space: nowrap !important;
-}
-
-.site-header nav a {
-    white-space: nowrap !important;
-}
-
-@media (max-width: 768px) {
-    .site-header .nav-container {
-        flex-wrap: wrap !important;
-    }
-
-    .site-header nav {
-        flex-wrap: wrap !important;
-    }
 }
