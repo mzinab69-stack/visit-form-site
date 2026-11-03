@@ -62,13 +62,13 @@ a {
 }
 
 .nav-container {
-  min-height: 82px;
+  min-height: 88px;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
-  gap: 18px;
+  gap: 35px;
   direction: rtl;
 }
 
@@ -82,10 +82,10 @@ a {
 
 .logo-image {
   display: block;
-  width: 185px;
-  height: 68px;
+  width: 220px;
+  height: 76px;
   object-fit: contain;
-  object-position: center;
+  object-position: right center;
 }
 
 .logo-mark {
