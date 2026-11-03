@@ -24,6 +24,7 @@
     {
       "src": "api/visit-request.js",
       "use": "@vercel/node"
-    }
+    },
+    {"src":"favicon.png","use":"@vercel/static"},
   ]
 }
