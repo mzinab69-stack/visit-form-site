@@ -14,6 +14,10 @@
       "use": "@vercel/static"
     },
     {
+      "src": "favicon.png",
+      "use": "@vercel/static"
+    },
+    {
       "src": "sitemap.xml",
       "use": "@vercel/static"
     },
@@ -24,7 +28,6 @@
     {
       "src": "api/visit-request.js",
       "use": "@vercel/node"
-    },
-    {"src":"favicon.png","use":"@vercel/static"},
+    }
   ]
 }
