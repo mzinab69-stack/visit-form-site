@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>پروژه‌ها | Parla Energy Optimization</title>
+  <meta name="description" content="سوابق و تجربیات مهندسی مرتبط با خدمات Parla Energy Optimization">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="/favicon.png?v=2">
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="container nav-container">
+
+    <a href="index.html#home" class="logo">
+      <img src="/peo-logo.png.png"
+           alt="Parla Energy Optimization"
+           class="logo-image">
+    </a>
+
+    <nav>
+      <a href="index.html#home">صفحه اصلی</a>
+      <a href="index.html#about">درباره ما</a>
+      <a href="index.html#services">خدمات</a>
+      <a href="projects.html">پروژه‌ها</a>
+      <a href="articles.html">مطالب آموزشی</a>
+      <a href="index.html#process">روش همکاری</a>
+      <a href="index.html#contact-info">ارتباط با ما</a>
+      <a href="index.html#contact" class="nav-button">درخواست مشاوره</a>
+    </nav>
+
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="container hero-content">
+
+    <div class="hero-text">
+      <span class="eyebrow">PROJECTS & EXPERIENCE</span>
+
+      <h1>
+        پروژه‌ها و
+        <span>سوابق اجرایی</span>
+      </h1>
+
+      <p>
+        در این بخش، نمونه‌هایی از پروژه‌ها و تجربیات مهندسی
+        مرتبط با حوزه فعالیت PEO معرفی خواهند شد.
+        هدف، نمایش توانمندی‌های فنی، زمینه‌های تخصصی و
+        تجربیات مرتبط با خدمات مهندسی مجموعه است.
+      </p>
+
+      <div class="hero-actions">
+        <a href="index.html#contact" class="primary-button">
+          درخواست همکاری
+        </a>
+        <a href="index.html" class="secondary-button">
+          بازگشت به صفحه اصلی
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section-space">
+  <div class="container">
+
+    <div class="section-heading">
+      <span class="section-tag">OUR EXPERIENCE</span>
+      <h2>سوابق و تجربیات مهندسی</h2>
+      <p>
+        نمونه پروژه‌ها و سوابق مرتبط با حوزه‌های تخصصی فعالیت PEO
+      </p>
+    </div>
+
+    <div class="service-grid">
+
+      <article class="service-card">
+        <div class="service-icon">PEO</div>
+        <h3>پروژه‌ها به‌زودی معرفی می‌شوند</h3>
+        <p>
+          اطلاعات پروژه‌ها، زمینه فعالیت، دامنه مشارکت و
+          جزئیات فنی سوابق مرتبط در این بخش منتشر خواهد شد.
+        </p>
+      </article>
+
+    </div>
+
+    <p style="text-align:center; margin-top:35px; color:#687F86; font-size:12px;">
+      سوابق معرفی‌شده با ذکر دقیق زمینه فعالیت و نقش مشارکت
+      در هر پروژه ارائه خواهند شد.
+    </p>
+
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-content">
+    <div>
+      <strong>Parla Energy Optimization</strong>
+      <p>راهکارهای مهندسی برای بهره‌وری بیشتر</p>
+    </div>
+    <span>© 2026 PEO. تمامی حقوق محفوظ است.</span>
+  </div>
+</footer>
+
+</body>
+</html>
