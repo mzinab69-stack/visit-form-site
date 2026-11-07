@@ -1,8 +1,17 @@
+
 {
   "version": 2,
   "builds": [
     {
       "src": "index.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "projects.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "articles.html",
       "use": "@vercel/static"
     },
     {
