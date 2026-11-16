@@ -15,6 +15,10 @@
       "use": "@vercel/static"
     },
     {
+      "src": "hvac-water-energy-ml.html",
+      "use": "@vercel/static"
+    },
+    {
       "src": "style.css",
       "use": "@vercel/static"
     },
