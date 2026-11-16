@@ -1,0 +1,407 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مدلسازی و بهینه‌سازی همزمان انرژی و آب در سیستم‌های HVAC | PEO</title>
+  <meta name="description" content="بررسی یک چارچوب فیزیک‌مبنا و داده‌محور برای پیش‌بینی انرژی و آب تقطیرشده در سیستم‌های HVAC با استفاده از یادگیری ماشین و تحلیل پارتو.">
+  <meta name="keywords" content="HVAC, یادگیری ماشین, XGBoost, بهینه‌سازی انرژی, آب تقطیرشده, تحلیل پارتو">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="/favicon.png?v=2">
+
+  <style>
+    .research-article {
+      max-width: 950px;
+      margin: 0 auto;
+      color: #334b54;
+      line-height: 2.1;
+    }
+
+    .research-article h2 {
+      color: #123D50;
+      font-size: 23px;
+      margin: 42px 0 15px;
+    }
+
+    .research-article h3 {
+      color: #078B91;
+      font-size: 18px;
+      margin: 25px 0 10px;
+    }
+
+    .research-article p {
+      margin-bottom: 17px;
+      text-align: justify;
+    }
+
+    .article-meta {
+      color: #687F86;
+      font-size: 14px;
+      margin-top: 15px;
+    }
+
+    .article-summary {
+      background: #f2f7f7;
+      border-right: 4px solid #078B91;
+      border-radius: 8px;
+      padding: 22px;
+      margin: 28px 0;
+    }
+
+    .article-note {
+      background: #fff8e9;
+      border-right: 4px solid #d5a13c;
+      border-radius: 8px;
+      padding: 18px 22px;
+      margin: 25px 0;
+      font-size: 14px;
+    }
+
+    .article-table-wrap {
+      overflow-x: auto;
+      margin: 22px 0;
+    }
+
+    .article-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 520px;
+      font-size: 14px;
+    }
+
+    .article-table th,
+    .article-table td {
+      border: 1px solid #dce6e8;
+      padding: 12px;
+      text-align: center;
+    }
+
+    .article-table th {
+      background: #123D50;
+      color: white;
+    }
+
+    .article-table tr:nth-child(even) {
+      background: #f5f8f8;
+    }
+
+    .article-equation {
+      direction: ltr;
+      text-align: center;
+      background: #f3f7f8;
+      padding: 15px;
+      border-radius: 8px;
+      margin: 18px 0;
+      font-family: Arial, sans-serif;
+      font-size: 17px;
+      color: #123D50;
+    }
+
+    .article-back {
+      margin-top: 45px;
+      text-align: center;
+    }
+
+    .article-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 25px;
+    }
+
+    .article-tags span {
+      background: #eaf3f3;
+      color: #087d83;
+      border-radius: 20px;
+      padding: 5px 13px;
+      font-size: 12px;
+    }
+
+    @media (max-width: 600px) {
+      .research-article h2 {
+        font-size: 20px;
+      }
+
+      .research-article p {
+        text-align: right;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="container nav-container">
+    <a href="index.html#home" class="logo">
+      <img src="/peo-logo.png.png"
+           alt="Parla Energy Optimization"
+           class="logo-image">
+    </a>
+
+    <nav>
+      <a href="index.html#home">صفحه اصلی</a>
+      <a href="index.html#about">درباره ما</a>
+      <a href="index.html#services">خدمات</a>
+      <a href="projects.html">پروژه‌ها</a>
+      <a href="articles.html">مطالب آموزشی</a>
+      <a href="index.html#process">روش همکاری</a>
+      <a href="index.html#contact-info">ارتباط با ما</a>
+      <a href="index.html#contact" class="nav-button">درخواست مشاوره</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="container hero-content">
+    <div class="hero-text">
+      <span class="eyebrow">HVAC & MACHINE LEARNING</span>
+      <h1>
+        مدلسازی فیزیک‌مبنا-داده‌محور و
+        <span>بهینه‌سازی همزمان انرژی و آب در سیستم‌های HVAC</span>
+      </h1>
+      <div class="article-meta">
+        نویسنده: Mohammad Javidnia
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-space">
+  <div class="container research-article">
+
+    <div class="article-summary">
+      <strong>چکیده</strong>
+      <p>
+        در این پژوهش، چارچوبی ترکیبی بر پایه روابط فیزیکی و روش‌های
+        یادگیری ماشین برای مدل‌سازی و بررسی همزمان مصرف انرژی و آب
+        تقطیرشده در سیستم‌های تهویه مطبوع ارائه شده است.
+        داده‌های طراحی سیستم از نرم‌افزار HAP استخراج و با توسعه
+        سناریوهای مختلف، مجموعه داده‌ای برای آموزش مدل‌های
+        XGBoost و شبکه عصبی مصنوعی (ANN) ایجاد شده است.
+        سپس عملکرد مدل‌ها با معیارهای آماری ارزیابی و رابطه
+        میان دو خروجی با استفاده از تحلیل چندهدفه و جبهه پارتو
+        بررسی شده است.
+      </p>
+    </div>
+
+    <h2>۱. مقدمه</h2>
+    <p>
+      سیستم‌های تهویه مطبوع از مصرف‌کنندگان مهم انرژی در ساختمان‌ها
+      هستند. در مناطق گرم و مرطوب، فرآیند رطوبت‌زدایی در کویل‌های
+      سرمایشی علاوه بر تأثیر بر بار سرمایشی، موجب تشکیل آب تقطیرشده
+      نیز می‌شود. بنابراین بررسی همزمان رفتار انرژی و آب حاصل از
+      رطوبت‌زدایی می‌تواند شناخت دقیق‌تری از عملکرد ترمودینامیکی
+      سیستم فراهم کند.
+    </p>
+    <p>
+      در این مطالعه، از ترکیب مدل‌سازی فیزیکی و یادگیری ماشین
+      برای تحلیل رفتار سیستم در سناریوهای مختلف استفاده شده است.
+      هدف، ایجاد مدلی برای پیش‌بینی خروجی‌ها و بررسی رابطه میان
+      آن‌ها در محدوده شرایط بررسی‌شده است.
+    </p>
+
+    <h2>۲. سیستم مورد مطالعه</h2>
+    <p>
+      سیستم مورد بررسی، یک مجموعه تهویه مطبوع از نوع انبساط مستقیم
+      (DX) مبتنی بر کویل سرمایشی است. اطلاعات طراحی از گزارش
+      نرم‌افزار HAP استخراج شده‌اند. ساختمان مورد مطالعه یک ساختمان
+      اداری در بندرعباس است.
+    </p>
+
+    <div class="article-table-wrap">
+      <table class="article-table">
+        <thead>
+          <tr>
+            <th>پارامتر</th>
+            <th>مقدار</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>موقعیت پروژه</td><td>بندرعباس</td></tr>
+          <tr><td>نوع ساختمان</td><td>اداری</td></tr>
+          <tr><td>مساحت کل</td><td>583.6 m²</td></tr>
+          <tr><td>تعداد فضاها</td><td>17</td></tr>
+          <tr><td>دمای طرح سرمایش</td><td>24°C</td></tr>
+          <tr><td>دمای هوای رفت</td><td>14.4°C</td></tr>
+          <tr><td>دبی هوای تازه</td><td>840 L/s</td></tr>
+          <tr><td>دبی کل هوای رفت</td><td>5038 L/s</td></tr>
+          <tr><td>بار سرمایش کل</td><td>76.9 kW</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>۳. روش‌شناسی و مدل‌سازی</h2>
+    <p>
+      در مرحله نخست، متغیرهای مؤثر بر عملکرد سیستم از گزارش طراحی
+      استخراج شدند. این متغیرها شامل دمای خشک، دمای مرطوب،
+      نسبت رطوبت، دبی هوا، میزان هوای تازه، بار سرمایش و تعداد افراد
+      هستند.
+    </p>
+
+    <p>
+      مدل فیزیکی بر اساس روابط بقای جرم و انرژی و روابط
+      ترمودینامیکی سیستم توسعه یافته است. برای نمونه، دبی جرمی هوا
+      از رابطه زیر محاسبه می‌شود:
+    </p>
+
+    <div class="article-equation">
+      ṁair = ρ × V̇
+    </div>
+
+    <p>
+      همچنین بار سرمایشی کل بر اساس اختلاف آنتالپی هوای ورودی و
+      خروجی از کویل سرمایشی محاسبه می‌شود:
+    </p>
+
+    <div class="article-equation">
+      Q = ṁair × (hin − hout)
+    </div>
+
+    <p>
+      با اعمال تغییرات کنترل‌شده بر پارامترهایی مانند تعداد افراد
+      و دبی هوا، سناریوهای مختلف عملیاتی تولید شدند. مجموعه داده
+      توسعه‌یافته شامل حدود ۴۰۰۰ سناریو بوده و برای آموزش و آزمون
+      مدل‌ها به ترتیب به دو بخش ۸۰ و ۲۰ درصد تقسیم شده است.
+      در تقسیم‌بندی داده‌ها از Random Seed برابر 42 استفاده شده است.
+    </p>
+
+    <div class="article-note">
+      <strong>توضیح درباره ماهیت داده‌ها:</strong>
+      داده‌های مورد استفاده در این پژوهش از گزارش‌ها و خروجی‌های
+      شبیه‌سازی نرم‌افزار HAP و سناریوسازی مبتنی بر آن تهیه شده‌اند.
+      بنابراین نتایج مدل‌ها بر مبنای داده‌های شبیه‌سازی‌شده هستند
+      و نباید آن‌ها را اندازه‌گیری مستقیم از عملکرد واقعی یک سیستم
+      در حال بهره‌برداری تلقی کرد.
+    </div>
+
+    <h2>۴. مدل‌های یادگیری ماشین</h2>
+    <p>
+      برای پیش‌بینی مصرف انرژی و میزان آب حاصل از رطوبت‌زدایی،
+      دو روش یادگیری ماشین شامل الگوریتم تقویت گرادیانی XGBoost
+      و شبکه عصبی مصنوعی ANN به کار گرفته شدند.
+      عملکرد مدل‌ها با استفاده از ضریب تعیین (R²) و ریشه میانگین
+      مربعات خطا (RMSE) ارزیابی شده است.
+    </p>
+
+    <h2>۵. نتایج ارزیابی مدل‌ها</h2>
+    <p>
+      نتایج ارزیابی نشان می‌دهد که مدل XGBoost در پیش‌بینی هر دو
+      خروجی انرژی و آب، نسبت به مدل ANN عملکرد دقیق‌تری داشته است.
+    </p>
+
+    <div class="article-table-wrap">
+      <table class="article-table">
+        <thead>
+          <tr>
+            <th>خروجی</th>
+            <th>مدل</th>
+            <th>R²</th>
+            <th>RMSE</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Energy</td><td>XGBoost</td><td>0.997462</td><td>1.594637</td></tr>
+          <tr><td>Energy</td><td>ANN</td><td>0.993673</td><td>2.517862</td></tr>
+          <tr><td>Water</td><td>XGBoost</td><td>0.997498</td><td>0.00011</td></tr>
+          <tr><td>Water</td><td>ANN</td><td>0.993773</td><td>0.000173</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>۶. تحلیل چندهدفه و جبهه پارتو</h2>
+    <p>
+      در این بخش، انرژی مصرفی سیستم و میزان آب تقطیرشده ناشی از
+      رطوبت‌زدایی به‌عنوان دو خروجی مورد بررسی قرار گرفته‌اند.
+      هدف، بررسی امکان کمینه‌سازی همزمان این دو شاخص در میان
+      سناریوهای تولیدشده بوده است.
+    </p>
+
+    <p>
+      نتایج تحلیل همبستگی پیرسون، ضریب همبستگی مثبت 0.88565 را
+      میان انرژی مصرفی و آب تقطیرشده نشان می‌دهد. همچنین در محدوده
+      سناریوهای بررسی‌شده، یک نقطه پارتوی منحصر‌به‌فرد با مقادیر
+      حداقل گزارش‌شده برای هر دو خروجی شناسایی شده است.
+    </p>
+
+    <div class="article-table-wrap">
+      <table class="article-table">
+        <thead>
+          <tr>
+            <th>شاخص</th>
+            <th>مقدار گزارش‌شده</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>حداقل انرژی</td><td>77.3842</td></tr>
+          <tr><td>حداقل آب تقطیرشده</td><td>0.0072</td></tr>
+          <tr><td>ضریب همبستگی پیرسون</td><td>0.88565</td></tr>
+          <tr><td>ضریب تعیین رگرسیون خطی</td><td>0.7845</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="article-equation">
+      Water = 0.00006 × Energy + 0.0023
+    </div>
+
+    <div class="article-note">
+      <strong>نکته مهم در تفسیر نتایج:</strong>
+      شاخص Water در این پژوهش به معنی آب تقطیرشده حاصل از
+      رطوبت‌زدایی در کویل سرمایشی است؛ نه مصرف آب تجهیزات HVAC
+      مانند برج خنک‌کننده. بنابراین نتایج این تحلیل را نباید
+      معادل بهینه‌سازی مصرف آب واقعی تجهیزات دانست.
+    </div>
+
+    <h2>۷. جمع‌بندی</h2>
+    <p>
+      این پژوهش یک چارچوب ترکیبی برای تحلیل رفتار سیستم‌های HVAC
+      با استفاده از روابط فیزیکی و یادگیری ماشین ارائه می‌کند.
+      نتایج ارزیابی نشان می‌دهد که XGBoost در داده‌های مورد بررسی
+      نسبت به ANN دقت بالاتری داشته است. همچنین تحلیل همزمان
+      انرژی و آب تقطیرشده، وجود رابطه مثبت میان این دو خروجی را
+      در سناریوهای شبیه‌سازی‌شده نشان می‌دهد.
+    </p>
+
+    <p>
+      استفاده از چنین چارچوبی می‌تواند زمینه‌ای برای توسعه ابزارهای
+      تحلیلی و بررسی سناریوهای مختلف عملکرد سیستم‌های تهویه مطبوع
+      فراهم کند. ارزیابی و تعمیم نتایج به شرایط بهره‌برداری واقعی،
+      به داده‌های اندازه‌گیری‌شده از سیستم نیاز خواهد داشت.
+    </p>
+
+    <div class="article-tags">
+      <span>HVAC</span>
+      <span>Machine Learning</span>
+      <span>XGBoost</span>
+      <span>Energy Optimization</span>
+      <span>Water–Energy Nexus</span>
+      <span>Pareto Analysis</span>
+    </div>
+
+    <div class="article-back">
+      <a href="articles.html" class="primary-button">
+        بازگشت به مطالب آموزشی
+      </a>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-content">
+    <div>
+      <strong>Parla Energy Optimization</strong>
+      <p>راهکارهای مهندسی برای بهره‌وری بیشتر</p>
+    </div>
+    <span>© 2026 PEO. تمامی حقوق محفوظ است.</span>
+  </div>
+</footer>
+
+</body>
+</html>
